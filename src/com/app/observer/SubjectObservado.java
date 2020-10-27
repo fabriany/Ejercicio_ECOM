@@ -4,23 +4,23 @@ package com.app.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.app.vo.Mecanismos;
+import com.app.vo.EstadosMecanismos;
 
 public class SubjectObservado extends Subject {
 
 	
 	private List<Observador> observadores = new ArrayList<Observador>();
-	private List<Mecanismos> estados = new ArrayList<Mecanismos>();
+	private List<EstadosMecanismos> estados = new ArrayList<EstadosMecanismos>();
 	
 
 	public void AgregarEstado(String nombre, String estado) {
 		
-		Mecanismos newEstado = new Mecanismos(nombre,estado);
+		EstadosMecanismos newEstado = new EstadosMecanismos(nombre,estado);
 		this.estados.add(newEstado);
 		AlarmaDispositivo();
 	}
 	
-	public List<Mecanismos> getEstados() {
+	public List<EstadosMecanismos> getEstados() {
 		return estados;
 	}
 

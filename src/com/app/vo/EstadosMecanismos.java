@@ -7,9 +7,9 @@ import java.util.Date;
  *
  */
 
-public class Mecanismos {
+public class EstadosMecanismos {
 
-	public Mecanismos(String nombre, String estado) {
+	public EstadosMecanismos(String nombre, String estado) {
 		super();
 		this.estado = estado;
 		this.nombre = nombre;

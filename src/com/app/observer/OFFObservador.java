@@ -3,7 +3,7 @@ package com.app.observer;
 import java.util.Date;
 import java.util.Optional;
 
-import com.app.vo.Mecanismos;
+import com.app.vo.EstadosMecanismos;
 
 public class OFFObservador extends Observador{
 
@@ -23,8 +23,8 @@ public class OFFObservador extends Observador{
 					
 					x.setFfin(new Date());
 					
-					Optional<Mecanismos> OptestadoOn = sujeto.getEstados().stream().filter(s -> s.getNombre().equals(x.getNombre()) && s.getEstado().toUpperCase().equals("ON")).findFirst();	
-					Mecanismos estadoOn = OptestadoOn.isPresent() ? OptestadoOn.get() : null;
+					Optional<EstadosMecanismos> OptestadoOn = sujeto.getEstados().stream().filter(s -> s.getNombre().equals(x.getNombre()) && s.getEstado().toUpperCase().equals("ON")).findFirst();	
+					EstadosMecanismos estadoOn = OptestadoOn.isPresent() ? OptestadoOn.get() : null;
 					
 					
 					System.out.println("ALARM " +  x.getNombre() + " - " + calculartiempo(estadoOn, x));
@@ -36,7 +36,7 @@ public class OFFObservador extends Observador{
 		} 
 	
 	
-	private long calculartiempo(Mecanismos estadoOn, Mecanismos estadoOff) {
+	private long calculartiempo(EstadosMecanismos estadoOn, EstadosMecanismos estadoOff) {
 		
 		long segundos;
 		
